@@ -25,3 +25,20 @@ function stringReverse(string){
     return newStr
 }
 console.log(stringReverse("HELLO"))
+
+function parensValid(string){
+
+}
+// RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
+// EX. "()()()" => TRUE
+// EX. "()(())" => TRUE
+// EX. "(()()" => FALSE
+// EX. "())(()" => FALSE
+
+function bracesValid(string){
+
+}
+// TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS
+// WILL REQUIRE A STACK IMPLEMENTATION
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//

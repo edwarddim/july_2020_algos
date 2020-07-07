@@ -35,3 +35,82 @@ function revStr(inStr) {
     }
     return rev;
 }
+
+function parensValid(string){
+    var open = 0;
+    var closed = 0
+    for(var i = 0; i < string.length; i++){
+        if(string.indexOf('(') == 0){
+            open++
+        }
+        string.indexOf('(')
+    }
+    if('(' > ')' || ')' > '('){
+        return false
+    }
+
+}
+
+function parensValid3(string){
+
+    for(var i = 0; i < string.length; i++){
+        if(string[i] == '('){
+            for(var j = i; j < string.length -i; j++){
+                if(string.indexOf(')') != -1){
+                    continue
+                } else{
+                    return false
+                }
+            }
+        } else{
+            continue
+        }
+    }
+}
+// RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
+// EX. "()()()" => TRUE
+// EX. "()(())" => TRUE
+// EX. "(()()" => FALSE
+// EX. "())(()" => FALSE
+function parensValid(inStr) {
+    // EARLY EXIT / CONSIDERING ANY EDGE CASES
+    if (inStr.length % 2 != 0 || inStr[0] != "(") {
+        return false;
+    }
+    openParens = ["("];
+    let firstOpenParen = [];
+    firstOpenParen.push(inStr[0]);
+
+    for (let i = 1; i < inStr.length; i++) {
+        if (openParens.includes(inStr[i])) {
+            firstOpenParen.push(inStr[i]);
+
+            //   console.log("firstOpenParen: ", firstOpenParen);
+        } else {
+            firstOpenParen.shift();
+            //   closeParen.push(inStr[i]);
+            //   console.log("close Paren: ", closeParen);
+        }
+    }
+    return firstOpenParen.length == 0;
+}
+console.log(parensValid("'())(()'"));
+
+function bracesValid(inString) {
+    let openBrace = ["(","{","["]
+    if (inString.length % 2 != 0) {
+        return false
+    }
+    if (!openBrace.includes(inString[0])) {
+        return false
+    }
+
+    for (let i = 1; i < inStr.length; i++){
+        
+    }
+
+}
+// TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS
+// WILL REQUIRE A STACK IMPLEMENTATION
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//

@@ -9,16 +9,27 @@ function acronym(string){
 // console.log(acronym("Live From Sat Night Live"))
 
 function reverseString(string){
-    // var newString = ""
-    // for(var i = string.length-1; i >= 0; i--){
-    //     newString += string[i]
-    // }
-    for(var i =0; i < string.length/2; i++){
-        var temp = string[i]
-        string[i] = string[string.length-1-i]
-        string[string.length-1-i] = temp
+    var newString = ""
+    for(var i = string.length-1; i >= 0; i--){
+        newString += string[i]
     }
-    return string
+    return newString
 }
 var string = "hello"
 console.log(reverseString(string))
+
+
+function parensValidCounter(string){
+    let counter = 0;
+    for(char of string){
+        if(char ==="("){
+            counter++
+        }
+        else{
+            counter--
+        }
+        if(counter < 0) return false
+    }
+    if(counter == 0) return true
+}
+
