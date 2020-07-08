@@ -84,6 +84,8 @@ function bracesValid(string){
 }
 
 
+
+
 function bracesValid(string){
 
 }
@@ -98,3 +100,43 @@ function bracesValid(string){
 // WILL REQUIRE A STACK IMPLEMENTATION
 // -----------------------------------------------------------------------------------------------//
 
+
+// YOURE FORGETING {}
+function isPalindrome(string){
+    for(var i = 0; i < Math.floor(string.length/2); i++){
+        if (string[i] !== string[string.length - 1 - i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+
+
+
+
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
+// "HELLO" => FALSE
+// "KAYAK" => TRUE
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+function isAnagram(string1, string2) {
+    if (string1.length !== string2.length) {
+        return false;
+    }
+    var charCounts1 = {};
+    var charCounts2 = {};
+    for (var i = 0; i < string1.length; i++) {
+        var char1 = string1[i];
+        var char2 = string2[i];
+        charCounts1[char1] = (charCounts1[char1]) ? charCounts1[char1]++ : 1;
+        charCounts2[char2] = (charCounts2[char2]) ? charCounts2[char2]++ : 1;
+    }
+    for (var key in charCounts1) {
+        if (!charCounts2[key] || charCounts1[key] !== charCounts2[key]) {
+            return false;
+        }
+    }
+    return true;
+}

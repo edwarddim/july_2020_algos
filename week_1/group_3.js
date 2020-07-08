@@ -12,6 +12,7 @@ function acronyms(string){
 }
 console.log(acronyms("Live From Saturday Night Live"))
 
+// -----------------------------------------------------------------------------------------------//
 
 // RETURN THE REVERSED STRING OF INPUT
 // EX. "HELLO" => "OLLEH"
@@ -26,19 +27,67 @@ function stringReverse(string){
 }
 console.log(stringReverse("HELLO"))
 
-function parensValid(string){
-
-}
-// RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
-// EX. "()()()" => TRUE
-// EX. "()(())" => TRUE
-// EX. "(()()" => FALSE
-// EX. "())(()" => FALSE
-
-function bracesValid(string){
-
-}
-// TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS
-// WILL REQUIRE A STACK IMPLEMENTATION
 // -----------------------------------------------------------------------------------------------//
+
+// RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
+
+function parensValidCounter(string){
+    let counter = 0;
+    for(char of string){
+        if(char ==="("){
+            counter++
+        }
+        else{
+            counter--
+        }
+        if(counter < 0) return false
+    }
+    if(counter == 0) return true
+}
+console.log(parensValidCounter("()()()"))
+console.log(parensValidCounter("()(())"))
+console.log(parensValidCounter("(()()"))
+console.log(parensValidCounter("())(()"))
+
+// -----------------------------------------------------------------------------------------------//
+
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
+// "HELLO" => FALSE
+// "KAYAK" => TRUE
+function isPalindrome(string){
+    for(let i = 0; i < Math.floor(string.length/2); i++){
+        if(string[i] == string[string.length-1-i]){
+            continue
+        }
+        else{
+            return false
+        }
+    }
+    return true
+}
+console.log(isPalindrome('madam'))
+console.log(isPalindrome('tacocat'))
+console.log(isPalindrome('abba'))
+console.log(isPalindrome('someone'))
+
+// -----------------------------------------------------------------------------------------------//
+
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+// HINT: YOU WANT TO USE A DICTIONARY
+
+function isAnagram(string1, string2){
+    string1 = string1.replace(/[^\w]/g, '').toLowerCase()
+    string2 = string2.replace(/[^\w]/g, '').toLowerCase()
+    
+    return sortString(string1) === sortString(string2)
+}
+function sortString(string) {
+    return string.split('').sort().join('');
+}
+
+console.log(isAnagram("ATE", "TEA"))
+console.log(isAnagram("LISTEN", "SILENT"))
+console.log(isAnagram("LISTEN", "SILENZ"))
+console.log(isAnagram("DEER", "REDD"))
+
 // -----------------------------------------------------------------------------------------------//

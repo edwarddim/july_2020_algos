@@ -79,7 +79,7 @@ function parensValid(str){
       } else if (str[i] == ")") {
         count--
         console.log("rcount: " + count)
-      }        
+      }
   } if (count !== 0) {
     return "Invalid!"
   } else if (count == 0) {
@@ -141,3 +141,111 @@ function bracesValid(string){
         return true
     }
 }
+
+function isPalindrome(string){
+
+}
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
+// "HELLO" => FALSE
+// "KAYAK" => TRUE
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+
+function isPalindrome(string){
+    for (var i = 0; i < string.length / 2; i++){
+      if (string[i] !== string[string.length - 1 -i]) {
+        return false
+      }
+    }
+    return true
+  }
+  
+  console.log(isPalindrome('ocat'))
+  console.log(isPalindrome('tacocat'))
+
+
+
+function isPalindrome(string){
+    for (var i = 0; i < string.length / 2; i++){
+        if (string[i] != string[string.length-1]){
+            return false
+        }
+        else if (string[i] == string[string.length-1-i]){
+            return true
+        }
+    }
+}
+// I know. The second else if is wrong
+// look at the solution above
+
+
+
+function anagram(str1, str2) {
+    var count = {};
+    var count2 ={};
+    for (var x = 0; x < str1.length; x++) {
+      if (count[str1[x]] === undefined) {
+        count[str1[x]] = 1;
+      } else {
+        count[str1[x]]++;
+      }
+    }
+    console.log(count)
+    for (var y = 0; y < str2.length; y++) {
+        if (count2[str2[y]] === undefined) {
+            count2[str2[y]] = 1;
+        } else {
+            count2[str2[y]]++;
+        }
+    }
+    console.log(count2)
+    if (count == count2) {
+        return true
+    } else {
+        return false
+    }
+  }
+
+anagram('ate', 'tea')
+
+if (str1.length !== str2.length) {
+    return false
+}
+
+isAnagram("tit", "tit") returns false ?
+
+function isAnagram(string1, string2){
+    var str1arr = string1.split("")
+    var str2arr = string2.split("")
+    var count = 0
+    
+    for (var i=0; i<str1arr.length; i++){
+        for (var j=0; j<str2arr.length; j++){
+            if (str2arr[j]==str1arr[i]){
+                count ++
+            }
+        }
+    }
+    if (count != string2.length){
+        return false
+    }
+    else {
+        return true
+    }
+}
+
+function isAnagram(string1, string2){
+
+}
+
+// HINT: YOU WANT TO USE A DICTIONARY
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+// EX. "ATE", "TEA" => TRUE
+// EX. "LISTEN", "SILENT" => TRUE
+// EX. "LISTEN", "SILENZ" => FALSE
+// EX. "DEER", "REDD" => FALSE
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+

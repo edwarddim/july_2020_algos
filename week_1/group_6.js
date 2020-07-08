@@ -38,3 +38,23 @@ function bracesValid(string){
 // WILL REQUIRE A STACK IMPLEMENTATION
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
+
+
+function isPalindrome(string){
+
+}
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
+// "HELLO" => FALSE
+// "KAYAK" => TRUE
+
+function isAnagram(string1, string2){
+
+}
+// HINT: YOU WANT TO USE A DICTIONARY
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+// EX. "ATE", "TEA" => TRUE
+// EX. "LISTEN", "SILENT" => TRUE
+// EX. "LISTEN", "SILENZ" => FALSE
+// EX. "DEER", "REDD" => FALSE
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//

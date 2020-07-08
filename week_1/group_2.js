@@ -114,3 +114,95 @@ function bracesValid(inString) {
 // WILL REQUIRE A STACK IMPLEMENTATION
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
+
+
+function isPalindrome(string){
+    for(var i = 0; i < string.length/2; i++){
+        if(string[i] != string[string.length -1-i]){
+            return false
+        }
+    }
+return true
+}
+
+
+function isPalindrome2(inStr) {
+    let strL = inStr.length - 1;
+    // if (inStr[0] !== inStr[strL]) {
+    //     return false
+    // }
+
+    for (let i = 0; i < inStr.length / 2; i++) {
+        if (inStr[i] != inStr[strL]) {
+            return false;
+        }
+        strL = strL - 1;
+    }
+    return true;
+}
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
+// "HELLO" => FALSE
+// "KAYAK" => TRUE
+
+function isAnagram(string1, string2) {
+    
+    if(string1.length != string2.length){
+        return false
+    }
+    var letters = []
+    for(var i = 0; i < string1.length; i++){
+        letters.push(string1[i])
+    }
+    for(var j = 0; j < string2.length; j++){
+        if(letters.indexOf(string2[j]) != -1){
+            continue
+        } else {
+            return false
+        }
+    }
+    
+    console.log(letters)
+    return true
+}
+
+function isAnagram2(str1, str2) {
+    if (str1.length != str2.length) {
+        return false;
+    }
+    str1 = str1.toLowerCase();
+    str2 = str2.toLowerCase();
+    let letters = {};
+    let letters2 = {};
+    for (let i = 0; i < str1.length; i++) {
+        if (Object.keys(letters).includes(str1[i])) {
+            letters[str1[i]] += 1;
+        } else {
+            letters[str1[i]] = 1;
+        }
+    }
+    for (let i = 0; i < str2.length; i++) {
+        if (Object.keys(letters2).includes(str1[i])) {
+            letters2[str1[i]] += 1;
+        } else {
+            letters2[str1[i]] = 1;
+        }
+    }
+    
+    for (let i = 0; i < str2.length; i++) {
+        if (letters[str2[i]] !== letters2[str2[i]]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(isAnagram2("LISTEN", "SILENT"));
+console.log(isAnagram2("LISTEN", "SILENZ"));
+
+// HINT: YOU WANT TO USE A DICTIONARY
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+// EX. "ATE", "TEA" => TRUE
+// EX. "LISTEN", "SILENT" => TRUE
+// EX. "LISTEN", "SILENZ" => FALSE
+// EX. "DEER", "REDD" => FALSE
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
