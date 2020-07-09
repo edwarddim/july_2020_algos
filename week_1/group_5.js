@@ -140,3 +140,85 @@ function isAnagram(string1, string2) {
     }
     return true;
 }
+
+
+
+function bookIndex(array){
+    var str = '';
+    for (var i = 0; i < array.length; i++) {
+        var start = array[i];
+        str += start;
+        while (array[i+1] - array[i] === 1) {
+            i++;
+        }
+        if (array[i] !== start) {
+            str += `-${array[i]}`;
+        }
+        if (i < array.length - 1) {
+            str += ', ';
+        }
+    }
+    return str;
+}
+// IT DOESN'T QUITE WORK WITH THIS CASE [1,2,3,6,9,10]
+// BUT IT DOES SEEM TO WORK WITH OTHER CASES
+//DOES ANYONE MIND PRESENTING THIS ONE?
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,13,14,15,37,38,70] => "1, 13-15, 37-38, 70"
+
+function join(arr, seperator){
+    var str = (arr.length === 0) ? '' : '' + arr[0];
+    for (var i = 1; i < arr.length; i++) {
+        str += seperator + arr[i];
+    }
+    return str;
+}
+// Given an arr and a separator string, output a string of every item in the array separated by the separator.
+// EX. [1,2,3] , ", " => "1, 2, 3"
+// EX. [1,2,3] , "-" => "1-2-3"
+// EX. [1] , "-" => "1"
+// EX. [], "," => ""
+
+function bookIndex(arr){
+    var newStr = "";
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i+1] - arr[i] !== 1) {
+            newStr += arr[i] + ",";
+        } else {
+            while (arr[i+1] - arr[i] == 1) {
+                temp = arr[i+1];
+            }
+            newStr += arr[i] + "-" + temp + ",";
+        }
+    }
+    return newStr
+}
+
+bookIndex([1,13,14,15,37,38,70])
+
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,13,14,15,37,38,70] => "1, 13-15, 37-38, 70"
+
+
+
+function join(arr, seperator){
+    newStr = ""
+    for(var i = 0; i < arr.length; i++) {
+        if (i !== arr.length-1) {
+            newStr += arr[i] + seperator;
+        } else {
+            newStr += arr[i];
+        }
+    }
+    return newStr
+}
+
+join([1,2,3] , ", ")
+join([1], "-")
+join([], ",")
+
+// Given an arr and a separator string, output a string of every item in the array separated by the separator.
+// EX. [1,2,3] , ", " => "1, 2, 3"
+// EX. [1,2,3] , "-" => "1-2-3"
+// EX. [1] , "-" => "1"
+// EX. [], "," => ""

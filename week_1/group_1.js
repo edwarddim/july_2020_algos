@@ -171,7 +171,7 @@ function isPalindrome(string){
         if (string[i] != string[string.length-1]){
             return false
         }
-        else if (string[i] == string[string.length-1-i]){
+            else if (string[i] == string[string.length-1-i]){
             return true
         }
     }
@@ -213,8 +213,6 @@ if (str1.length !== str2.length) {
     return false
 }
 
-isAnagram("tit", "tit") returns false ?
-
 function isAnagram(string1, string2){
     var str1arr = string1.split("")
     var str2arr = string2.split("")
@@ -249,3 +247,64 @@ function isAnagram(string1, string2){
 // -----------------------------------------------------------------------------------------------//
 
 
+function bookIndex(array){
+    tempArr = []
+    count = 0
+    tempStr = ""
+    for (var i=0; i<arr.length; i+=count){
+        arr.push[i]
+        for (var j=0; j<arr.length; j++){
+            if (arr[j+1]==arr[j]+1){
+                tempStr += arr[i+1]
+                count++
+            }
+        }
+        tempArr.push(tempStr)
+    }
+    return tempArr
+}
+
+
+
+
+function bookIndex(arr) {
+    tempArr = []
+    tempStr = ''
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] - 1 == arr[i - 1] || arr[i] + 1 == arr[i + 1]) {
+        tempArr.push(arr[i])
+      } else {
+        tempStr += ', ' + tempArr[0] + '-' + tempArr[tempArr.length - 1]
+        tempStr += ', ' + arr[i]
+        tempArr = []
+      } 
+    }
+    console.log(tempArr)
+    console.log(tempStr)
+  }
+  
+  var output = bookIndex([1,3,4,5,7,9,10,12]) // => getting , undefined-undefined, 1, 3-5, 7, 9-10, 12
+  console.log(output)
+
+
+
+
+
+
+
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,13,14,15,37,38,70] => "1, 13-15, 37-38, 70"
+
+var output = bookIndex([1,3,4,5,7]) // => [1,3-5,7]
+
+function join(arr, seperator){
+
+}
+// Given an arr and a separator string, output a string of every item in the array separated by the separator.
+// EX. [1,2,3] , ", " => "1, 2, 3"
+// EX. [1,2,3] , "-" => "1-2-3"
+// EX. [1] , "-" => "1"
+// EX. [], "," => ""
+
+
+}

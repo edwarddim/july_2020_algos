@@ -130,3 +130,38 @@ isAnagram("test2", "test")
 // EX. "DEER", "REDD" => FALSE
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
+
+
+function bookIndex(array){
+    indexString = ""
+    for (var i = 0; i < array.length; i++) {
+        var endthrough = array[i]
+        var j = i
+        while (array[j + 1] == array[j] + 1) {
+            j++
+        }
+        endthrough = array[j]
+        if (j - i != 0) {
+            indexString += " " + array[i] + "-" + endthrough + ','
+        } else {
+            indexString += array[i] + "," 
+        }
+        i = j
+        
+    }
+    console.log(indexString)
+}
+
+bookIndex([1,13,14,15,16,17,18,19,22,37,38,68,69,70,71])
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,13,14,15,37,38,70] => "1, 13-15, 37-38, 70"
+
+function join(arr, seperator){
+    for 
+
+}
+// Given an arr and a separator string, output a string of every item in the array separated by the separator.
+// EX. [1,2,3] , ", " => "1, 2, 3"
+// EX. [1,2,3] , "-" => "1-2-3"
+// EX. [1] , "-" => "1"
+// EX. [], "," => ""

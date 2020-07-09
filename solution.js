@@ -78,3 +78,38 @@ function isAnagram(string1, string2){
     }
     return true
 }
+
+
+function bookIndex(array){
+    var str = '';
+    for (var i = 0; i < array.length; i++) {
+        var start = array[i];
+        str += start;
+        while (array[i+1] - array[i] === 1) {
+            i++;
+        }
+        if (array[i] !== start) {
+            str += `-${array[i]}`;
+        }
+        if (i < array.length - 1) {
+            str += ', ';
+        }
+    }
+    return str;
+}
+
+function join(arr, separator) {
+    let joined = "";
+  
+    if (!arr.length) {
+      return joined;
+    }
+  
+    // less than arr.length - 1 to stop before last
+    for (let i = 0; i < arr.length - 1; i++) {
+      joined += arr[i] + separator;
+    }
+    // "1,2,3"
+    return joined + arr[arr.length - 1];
+}
+join([1,2,3] , ", ")

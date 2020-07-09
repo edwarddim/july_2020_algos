@@ -58,3 +58,19 @@ function isAnagram(string1, string2){
 // EX. "DEER", "REDD" => FALSE
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
+
+
+function bookIndex(array){
+
+}
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,13,14,15,37,38,70] => "1, 13-15, 37-38, 70"
+
+function join(arr, seperator){
+
+}
+// Given an arr and a separator string, output a string of every item in the array separated by the separator.
+// EX. [1,2,3] , ", " => "1, 2, 3"
+// EX. [1,2,3] , "-" => "1-2-3"
+// EX. [1] , "-" => "1"
+// EX. [], "," => ""

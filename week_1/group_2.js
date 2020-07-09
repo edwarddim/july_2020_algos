@@ -155,7 +155,7 @@ function isAnagram(string1, string2) {
     }
     for(var j = 0; j < string2.length; j++){
         if(letters.indexOf(string2[j]) != -1){
-            continue
+            letters.splice(letters.indexOf(string2[j]),1)
         } else {
             return false
         }
@@ -189,6 +189,9 @@ function isAnagram2(str1, str2) {
     }
     
     for (let i = 0; i < str2.length; i++) {
+        if (!str1.includes(str2[i])) {
+            return false
+        }
         if (letters[str2[i]] !== letters2[str2[i]]) {
             return false;
         }
@@ -206,3 +209,41 @@ console.log(isAnagram2("LISTEN", "SILENZ"));
 // EX. "DEER", "REDD" => FALSE
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
+
+function bookIndex(array){
+    for(var i = 0; i < array.length; i++){
+        if(array[i]+1 == array[i+1]){
+            
+        }
+    }
+}
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,13,14,15,37,38,70] => "1, 13-15, 37-38, 70"
+function bookIndex2(inputArr) {
+    let stringIndex = "";
+    for (let i = 0; i < inputArr.length; i++) {
+        if (inputArr[i + 1] == inputArr[i] + 1) {
+            stringIndex += `${inputArr[i]}-`;
+            continue
+        } else {
+            stringIndex += `${inputArr[i]},`;
+            
+        }
+    }
+    console.log(stringIndex);
+    return stringIndex;
+}
+bookIndex2([1, 13, 14, 15, 37, 38, 70]);
+
+
+
+function join(arr, seperator){
+    var newstr = arr.join(seperator)
+    return newstr
+}
+
+// Given an arr and a separator string, output a string of every item in the array separated by the separator.
+// EX. [1,2,3] , ", " => "1, 2, 3"
+// EX. [1,2,3] , "-" => "1-2-3"
+// EX. [1] , "-" => "1"
+// EX. [], "," => ""
