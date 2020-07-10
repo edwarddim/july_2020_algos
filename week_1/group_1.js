@@ -308,3 +308,38 @@ function join(arr, seperator){
 
 
 }
+
+
+function invertObj(obj){
+
+}
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, SWAP THE KEYS AND VALUES OF THE OBJECT
+// EX.
+// {
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+
+function invertObj(obj){
+    var newObj = {}
+    for (var i=0; i<obj.length; i++){
+        var key = 0
+        obj[]
+    }
+
+}
+
+for (var key in obj){}
+
+
+function minCoinChange(num){
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"

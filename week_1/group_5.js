@@ -222,3 +222,75 @@ join([], ",")
 // EX. [1,2,3] , "-" => "1-2-3"
 // EX. [1] , "-" => "1"
 // EX. [], "," => ""
+
+function invertObj(obj){
+    for (var [key, val] of Object.entries(obj)) {
+        delete obj[key];
+        obj[val] = key
+    }
+    return obj;
+}
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, SWAP THE KEYS AND VALUES OF THE OBJECT
+// EX.
+// {
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+function minCoinChange(num){
+    let change = {};
+    change['quarter'] = Math.floor(num / 25);
+    num -= change['quarter'] * 25;
+    change['dime'] = Math.floor(num / 10);
+    num -= change['dime'] * 10;
+    change['nickel'] = Math.floor(num / 5);
+    num -= change['nickel'] * 5;
+    change['penny'] = num;
+    return change;
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+
+
+
+
+
+
+
+
+
+
+
+
+function invertObj(object){
+    for(var i = 0, i < Object.keys().length, i++) {
+        var temp = object.keys[i];
+        var object.keys[i] = object.value[i];
+        var object.value[i] = temp;
+    }
+}
+
+
+
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, SWAP THE KEYS AND VALUES OF THE OBJECT
+// EX.
+// {
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+function minCoinChange(num){
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"

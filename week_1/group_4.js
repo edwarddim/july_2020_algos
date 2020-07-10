@@ -143,7 +143,7 @@ function bookIndex(array){
         endthrough = array[j]
         if (j - i != 0) {
             indexString += " " + array[i] + "-" + endthrough + ','
-        } else {
+        } else if {
             indexString += array[i] + "," 
         }
         i = j
@@ -165,3 +165,49 @@ function join(arr, seperator){
 // EX. [1,2,3] , "-" => "1-2-3"
 // EX. [1] , "-" => "1"
 // EX. [], "," => ""
+
+function invertObj(obj){
+    var newobj = {}
+    for (var key in obj) {
+        newobj[obj[key]] = key
+    }
+    return newobj
+}
+
+console.log(invertObj({'A': "ONE", 'B': "TWO", 'C': 'THREE'}))
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, SWAP THE KEYS AND VALUES OF THE OBJECT
+// EX.
+// {
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+function minCoinChange(num){
+    var coins = {
+        'quarters': 0,
+        'dimes': 0,
+        'nickels': 0,
+        'pennies': 0
+    };
+    coins.quarters = Math.floor(num / 25);
+    num = num % 25
+
+    coins.dimes = Math.floor(num / 10);
+    num = num % 10
+
+    coins.nickels = Math.floor(num / 5);
+    num = num % 5
+
+    coins.pennies = num
+
+    return coins;
+}
+
+console.log(minCoinChange(321))
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"

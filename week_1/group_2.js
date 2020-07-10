@@ -247,3 +247,62 @@ function join(arr, seperator){
 // EX. [1,2,3] , "-" => "1-2-3"
 // EX. [1] , "-" => "1"
 // EX. [], "," => ""
+
+function invertObj(obj){
+    newObj = {}
+    for(var key in obj){
+       newObj[obj[key]] = key
+    }
+    return newObj
+}
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, SWAP THE KEYS AND VALUES OF THE OBJECT
+// EX.
+// {
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+
+function invertObj2(inObj) {
+    for (let key in inObj) {
+        let tempValue = inObj[key]
+        delete inObj[key]
+        inObj[tempValue] = key
+        
+    }
+    console.log(inObj);
+    return inObj
+
+}
+function minCoinChange(num){
+    var coins = {
+        "QUARTER" : .25,
+        "DIME" : .10,
+        "NICKLE" : .05,
+        "PENNY" : .01,
+    }
+    var inDollar = num * 0.01
+    var afterQuart = (inDollar % coins.QUARTER).toFixed(2)
+    var afterDime = (afterQuart % coins.DIME).toFixed(2)
+    var afterNickle = (afterDime % coins.NICKLE).toFixed(2)
+    var quarts = Math.floor(inDollar/coins.QUARTER)
+    var dimes = Math.floor(afterQuart/coins.DIME)
+    var nickles = Math.floor(afterDime/coins.NICKLE)
+    var pennies = Math.floor(afterNickle/coins.PENNY)
+
+    var string = quarts + " Quarters, " + dimes + " Dimes, " + nickles + " Nickles, " + pennies + " Pennies"
+
+    return string
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+
+
+
+
+
