@@ -34,7 +34,8 @@ function reverseWordOrder(string){
 function dedupeString(string){
 
 }
-
+// EX. "aabacecbedd" => "abced" 
+// EX. "bbbbaaaaffff" => "baf"
 /* 
   Given a string containing space separated words
   Reverse each word in the string.
@@ -46,6 +47,7 @@ function reverseWord(string){
 // EX. "HELLO" => "OLLEH"
 // EX. "hello world" => "olleh dlrow"
 // EX. "abc def ghi" => "cba fed ihg"
+// EX. "THIS IS A TEST" => "SIHT SI A TSET"
 
 
 //-----------------------------------------------------------------------------------------------------//
@@ -59,7 +61,7 @@ function reverseWord(string){
   
   If final result is not shorter (such as "bb" => "b2" ),
   return the original string.
-  */
+*/
 function encode(string){
 
 }
@@ -70,13 +72,15 @@ function encode(string){
 function decode(string){
 
 }
+// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
 // EX. "a3b2c1d3" => "aaabbcddd"
 
 //-----------------------------------------------------------------------------------------------------//
 // THUR
 /* 
   String: Rotate String
-  Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the right by that given integer amount.
+  Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the 
+  right by that given integer amount.
 */
 
 function rotateString(string, n){
