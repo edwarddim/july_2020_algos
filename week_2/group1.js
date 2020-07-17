@@ -164,13 +164,13 @@ function reverseWord(string){
   return fwdStrArr.join(' ')
 }
 
-/* 
+/*
   String Encode
   You are given a string that may contain sequences of consecutive characters.
   Create a function to shorten a string by including the character,
-  then the number of times it appears. 
-  
-  
+  then the number of times it appears.
+
+
   If final result is not shorter (such as "bb" => "b2" ),
   return the original string.
   */
@@ -252,7 +252,7 @@ decode('a3b2c1d3')
 
 // EX. "a3b2c1b2d3" => "aaabbcbbddd"
 
-/* 
+/*
   String: Rotate String
   Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the right by that given integer amount.
 */
@@ -295,3 +295,79 @@ console.log(rotateString('Hello', 2))
 
 // EX. "HELLO WORLD", 1 => "DHELLO WORL"
 // EX. "HELLO WORLD", 2 => "LDHELLO WOR"
+
+
+function updateInv(newInv, currInv){
+  for (var i = 0; i < newInv.length; i++) {
+    for (var j = 0; j < currInv.length; j++) {
+      if (currInv[j].name == newInv[i].name) {
+        newInv[i].quantity += currInv[j].quantity
+      } else {
+        newInv.push(currInv[j])
+      }
+    }
+    console.log(newInv)
+  }
+}
+
+
+
+
+
+
+function updateInv(newInv, currInv){
+  for (var i = 0; i < newInv.length; i++) {
+    for (var j = 0; j < currInv.length;j++) {
+      if (newInv[i].name == currInv[j].name) {
+        newInv[i].quantity += currInv[j].quantity
+      }
+    }
+  }
+  return newInv
+}
+
+
+
+function updateInv(newInv, currInv){
+  inv = []
+  for (var i = 0;i < newInv.length; i++) {
+    for (var j = 0; j <currInv.length;j++) {
+      if (currInv[j].name == newInv[i].name) {
+        currInv[j].quantity += newInv[i].quantity
+      } else {
+        currInv += newInv[i]
+      }
+    }
+  }
+  return currInv
+}
+
+
+
+const newInv = [
+    { name: "Grain of Rice", quantity: 9000 },
+    { name: "Peanut Butter", quantity: 50 },
+    { name: "Royal Jelly", quantity: 20 },
+  ];
+const currInv = [
+    { name: "Peanut Butter", quantity: 20 },
+    { name: "Grain of Rice", quantity: 1 },
+];
+/*
+    Output: [
+      { name: "Peanut Butter", quantity: 70 },
+      { name: "Grain of Rice", quantity: 90001 },
+      { name: "Royal Jelly", quantity: 20 },
+    ]
+*/
+
+/*
+    Given a string, return the first non-repeating character
+    within string
+    // EX. "STRESS" => "T"
+    // EX. "MOONMEN" => "E"
+
+*/
+function firstNonRepeatingChar(string){
+
+}

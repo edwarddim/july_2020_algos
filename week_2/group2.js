@@ -252,3 +252,66 @@ function rotateString2(string, n) {
   console.log(newStr.slice(0, newStr.length - n));
   return newStr.slice(0, newStr.length - n);
 }
+
+
+
+function updateInv(newInv, currInv) {
+  let currInvNames = [];
+  for (const item of currInv) {
+    currInvNames.push(item.name);
+  }
+  for (const item of newInv) {
+    if (currInvNames.includes(item.name)) {
+      //   currItem.quantity += item.quantity;
+      for (const currItem of currInv) {
+        if (currItem.name === item.name) {
+          currItem.quantity += item.quantity;
+        }
+      }
+    } else {
+      currInv.push(item);
+    }
+  }
+  console.log(currInv);
+  return currInv;
+}
+
+updateInv(
+  [
+    { name: "mango", quantity: 34 },
+    { name: "car", quantity: 45 },
+    { name: "bag", quantity: 10 },
+  ],
+  [
+    { name: "car", quantity: 5 },
+    { name: "mango", quantity: 4 },
+  ]
+);
+
+const test1NewInv = [
+    { name: "Grain of Rice", quantity: 9000 },
+    { name: "Peanut Butter", quantity: 50 },
+    { name: "Royal Jelly", quantity: 20 },
+  ];
+const test1CurrInv = [
+    { name: "Peanut Butter", quantity: 20 },
+    { name: "Grain of Rice", quantity: 1 },
+];
+/* 
+    Output: [
+      { name: "Peanut Butter", quantity: 70 },
+      { name: "Grain of Rice", quantity: 90001 },
+      { name: "Royal Jelly", quantity: 20 },
+    ]
+*/
+
+/*
+    Given a string, return the first non-repeating character
+    within string
+    // EX. "STRESS" => "T"
+    // EX. "MOONMEN" => "E"
+
+*/
+function firstNonRepeatingChar(string){
+
+}

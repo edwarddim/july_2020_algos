@@ -96,3 +96,36 @@ function rotateString(string, n) {
 }
 
 print(rotateString("HELLO WORLD", 3))
+
+
+function updateInv(newInv, currInv){
+  
+}
+
+const test1NewInv = [
+    { name: "Grain of Rice", quantity: 9000 },
+    { name: "Peanut Butter", quantity: 50 },
+    { name: "Royal Jelly", quantity: 20 },
+  ];
+const test1CurrInv = [
+    { name: "Peanut Butter", quantity: 20 },
+    { name: "Grain of Rice", quantity: 1 },
+];
+/* 
+    Output: [
+      { name: "Peanut Butter", quantity: 70 },
+      { name: "Grain of Rice", quantity: 90001 },
+      { name: "Royal Jelly", quantity: 20 },
+    ]
+*/
+
+/*
+    Given a string, return the first non-repeating character
+    within string
+    // EX. "STRESS" => "T"
+    // EX. "MOONMEN" => "E"
+
+*/
+function firstNonRepeatingChar(string){
+
+}

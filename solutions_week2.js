@@ -107,3 +107,27 @@ function rotateString(str, n) {
   }
   return rotatedSubStr + res;
 }
+
+
+function updateInventory(newInv, currInv) {
+  for (let i = 0; i < newInv.length; i++) {
+    let itemFound = false;
+    const newItem = newInv[i];
+
+    for (let j = 0; j < currInv.length; ++j) {
+      const currItem = currInv[j];
+
+      if (newItem.name === currItem.name) {
+        itemFound = true;
+        currItem.quantity += newItem.quantity;
+        break;
+      }
+    }
+    if (itemFound === false) {
+      currInv.push(newItem);
+    }
+  }
+  return currInv;
+}
+
+

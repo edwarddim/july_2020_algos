@@ -99,12 +99,16 @@ function rotateString(string, n){
   return the current inventory after updating it.
 */
 
-const test1NewInv = [
+function updateInv(newInv, currInv){
+
+}
+
+const newInv = [
     { name: "Grain of Rice", quantity: 9000 },
     { name: "Peanut Butter", quantity: 50 },
     { name: "Royal Jelly", quantity: 20 },
-  ];
-const test1CurrInv = [
+];
+const currInv = [
     { name: "Peanut Butter", quantity: 20 },
     { name: "Grain of Rice", quantity: 1 },
 ];
@@ -115,3 +119,14 @@ const test1CurrInv = [
       { name: "Royal Jelly", quantity: 20 },
     ]
 */
+
+/*
+    Given a string, return the first non-repeating character
+    within string
+    // EX. "stress" => "t"
+    // EX. "moonmen" => "e"
+
+*/
+function firstNonRepeatingChar(string){
+
+}
