@@ -22,3 +22,23 @@ function balancePoint(nums) {
     }
     return false;
 }
+
+function binarySearch(arr, target) {
+  let leftIdx = 0;
+  let rightIdx = arr.length - 1;
+
+  while (leftIdx <= rightIdx) {
+    let midIdx = Math.floor(rightIdx - leftIdx / 2);
+
+    if (arr[midIdx] === target) {
+      return true;
+    }
+
+    if (target < arr[midIdx]) {
+      rightIdx = midIdx - 1;
+    } else {
+      leftIdx = midIdx + 1;
+    }
+  }
+  return false;
+}

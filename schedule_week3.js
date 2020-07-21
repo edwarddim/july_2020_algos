@@ -27,9 +27,12 @@ function balanceIndex(arr){
   Do not sequentially iterate the array. Instead, ‘divide and conquer’,
   taking advantage of the fact that the array is sorted .
 */
-function binarySearch(arr){
+function binarySearch(arr,target){
 
 }
+
+
+
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
 

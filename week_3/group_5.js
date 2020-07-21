@@ -69,3 +69,12 @@ console.log(balanceIndex([9,9])); // -1
 console.log(balanceIndex([1])); // -1
 console.log(balanceIndex([])); // -1
 
+/* 
+  Array: Binary Search (non recursive)
+  Given a sorted array and a value, return whether the array contains that value.
+  Do not sequentially iterate the array. Instead, ‘divide and conquer’,
+  taking advantage of the fact that the array is sorted .
+*/
+function binarySearch(arr,target){
+
+}

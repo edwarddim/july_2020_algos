@@ -48,3 +48,45 @@ function balanceIndex(arr){
 // EX. [5,0,2,3] => 1
 // EX. [9,0,9] => 1
 // EX. [9,9] => -1
+
+
+/*
+  Array: Binary Search (non recursive)
+  Given a sorted array and a value, return whether the array contains that value.
+  Do not sequentially iterate the array. Instead, ‘divide and conquer’,
+  taking advantage of the fact that the array is sorted .
+*/
+function binarySearch(arr, target){
+
+}
+
+function binarySearch(arr, target) {
+  var left = 0;
+  var right = arr.length - 1;
+  if (target < arr[left] || target > arr[right]) {
+    return false;
+  }
+  while (left <= right) {
+    var mid = Math.floor((right + left) / 2);
+    if (target === arr[mid]) {
+      return true;
+    } else if (target < arr[mid]) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return false;
+}
+
+// Tests, ran in jsbin and node
+console.log(binarySearch([], 1)); // false
+console.log(binarySearch([1,2], 3)); // false
+console.log(binarySearch([1,2,4,5,6], 3)); // false
+console.log(binarySearch([1], 1)); // true
+console.log(binarySearch([1,2], 1)); // true
+console.log(binarySearch([1,2], 2)); // true
+console.log(binarySearch([1,2,3], 3)); // true
+console.log(binarySearch([1,2,3,5,6], 5)); // true
+console.log(binarySearch([1,2,3,4,5,6], 2)); // true
+console.log(binarySearch([1,2,3,4,5,6], 6)); // true

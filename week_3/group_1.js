@@ -1,4 +1,4 @@
-/*
+                                                                                                                                      /*
   Balance Point
   Write a function that returns whether the given
   array has a balance point BETWEEN indices,
@@ -69,9 +69,71 @@ function balancePoint(arr){
 }
 // EX. [1, 2, 3, 4, 10] => TRUE
 // EX. [1, 2, 4, 2, 1] => FALSE
-function balanceIndex(arr){
 
+/* 
+  Array: Binary Search (non recursive)
+  Given a sorted array and a value, return whether the array contains that value.
+  Do not sequentially iterate the array. Instead, ‘divide and conquer’,
+  taking advantage of the fact that the array is sorted .
+*/
+function binarySearch(arr, target){
+  var start = 0
+  var end = arr.length-1
+  while (end > start){
+    var mid = Math.floor((start + end) /2)
+    if (target == arr[mid]){
+      return true
+    }
+    if (target > arr[mid]){
+      start = mid 
+    } 
+    if (target < arr[mid]){
+      end = mid 
+    }
+  }
+  return false
 }
-// EX. [-2, 5, 7, 0, 3] => 2
-// EX. [9,0,9] => 1
-// EX. [9,9] => -1
+
+binarySearch([1,2,3,4,5,6,7,8,9,10], 8)
+
+// Check if middle of array = target return true, if not
+// check if arr[middle] < target
+//    if so, arr[middle] becomes arr[start]
+// else if arr[middle] > target
+//    arr[middle] becomes arr[end]
+
+
+binarySearch([1,2,3,4,5,6,7,8,9,10], 0)
+binarySearch([11,12,13,14,15,16,17,18,19,20], 0)
+console.log(binarySearch([1,2,3,4,5,6,7,8,9,10], 11))
+
+
+
+function binarySearch(arr, target){
+  for (var i = 0; i < arr.length; i++) {
+      var start = 0
+      var end = arr.length - 1
+      var middle = (start+end)/2
+      if(arr[start] > target || arr[end] < target){  // under these conditions, the target doesn't exist inside the array
+          return false
+      }
+      else if(arr[start] || arr[end] || arr[middle] == target){  // I added this part; if start/end/middle is the target, you don't need to do a search
+          return true
+      }  
+      while(start <= end){  // because in a sorted array the start point on the L needs to be smaller or equal to the end point on the R
+          if(arr[middle] == target){
+              return true
+          }
+          else if(target > arr[middle]) {
+              start = middle + 1  // because you know target is on the R side of middle so start at the next index to the R of middle
+          }
+          else{
+              end = mid - 1  // because you know the target is on the L side of middle so end at the index to the L of middle
+          }
+      }  
+  }
+  return false  // because target is not found inside the array
+}
+console.log(binarySearch([1,2,3,4,5,6], 5))  // prints True
+console.log(binarySearch([1,2,3,4,5,6], 9))  // prints False
+

@@ -37,3 +37,29 @@ function balanceIndex(arr){
 // EX. [-2, 5, 7, 0, 3] => 2
 // EX. [9,0,9] => 1
 // EX. [9,9] => -1
+
+/* 
+  Array: Binary Search (non recursive)
+  Given a sorted array and a value, return whether the array contains that value.
+  Do not sequentially iterate the array. Instead, ‘divide and conquer’,
+  taking advantage of the fact that the array is sorted .
+*/
+function binarySearch(arr,target){
+  var startPointer = 0;
+  var endPointer = arr.length - 1;
+  while (startPointer <= endPointer) {
+    var midPointer = Math.floor((startPointer + endPointer) / 2);
+    if (arr[midPointer] == target) {
+      return true
+    }
+    if (arr[midPointer] > target) {
+      endPointer = (startPointer + endPointer) / 2;
+    }
+    if (arr[midPointer] < target) {
+      startPointer = (startPointer + endPointer) / 2;
+    }
+  }
+  return false
+}
+
+console.log(binarySearch([-3,-2,-1,0,1,2,3,4,5,6], -1));
