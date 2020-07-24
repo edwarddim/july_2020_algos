@@ -47,6 +47,8 @@ function binarySearch(arr,target){
 function dedupeArr(arr){
 
 }
+// EX. [1,1,1,2,2,2,3,3,4,4,4] => [1,2,3,4]
+// DO ALGO WITH ONE FOR LOOP AND NO OBJECT TO KEEP TRACK OF FREQUENCY
 
 /* 
   Array: Mode
@@ -75,6 +77,8 @@ function mode(arr){
 function missingValue(arr){
 
 }
+// [3,0,1,2] => False
+// [4,0,2,1] => True
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//

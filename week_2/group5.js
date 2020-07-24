@@ -325,3 +325,14 @@ const test1CurrInv = [
 function firstNonRepeatingChar(string){
 
 }
+
+/* 
+  Missing Value
+  You are given an array of length N that contains, in no particular order,
+  integers from 0 to N . One integer value is missing.
+  Quickly determine and return the missing value.
+  NO SORT ALLOWED
+*/
+function missingValue(arr){
+
+}

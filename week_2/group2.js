@@ -98,7 +98,7 @@ function reverseWord2(string) {
   String Encode
   You are given a string that may contain sequences of consecutive characters.
   Create a function to shorten a string by including the character,
-  then the number of times it appears.
+  then the nurmber of times it appears.
 
 
   If final result is not shorter (such as "bb" => "b2" ),
@@ -312,6 +312,114 @@ const test1CurrInv = [
     // EX. "MOONMEN" => "E"
 
 */
-function firstNonRepeatingChar(string){
+// WED
+/* 
+  Array: Remove Duplicates
+  Given a SORTED array of integers, dedupe the array 
+  Because array elements are already in order, all duplicate values will be grouped together.
+  Ok to use a new array
+  Bonus: do it in O(n) time (no nested loops, new array ok)
+*/
+function dedupeArr(arr){
+  return Array.from(new Set(arr))
+}
+
+function dedupeArr(arr){
+  newArr = []
+  newArr.push(arr[0])
+  for (var i=1; i<arr.length; i++){
+    if (arr[i]==newArr[newArr.length-1]){
+      continue
+    }
+    else {
+      newArr.push(arr[i])
+    }
+  }
+  return newArr
+}
+// EX. [1,1,1,2,2,2,3,3,4,4,4] => [1,2,3,4]
+// DO ALGO WITH ONE FOR LOOP AND NO OBJECT TO KEEP TRACK OF FREQUENCY
+
+/* 
+  Array: Mode
+  
+  Create a function that, given an array of ints,
+  returns the int that occurs most frequently in the array.
+  What if there are multiple items that occur the same number of time?
+    - return all of them (in an array)
+    - what if all items occur the same number of times?
+      - return empty array
+*/
+function mode(arr) {
+  let countItems = {};
+  for (const num of arr) {
+    if (countItems[num]) {
+      countItems[num] += 1;
+    } else {
+      countItems[num] = 1;
+    }
+  }
+  let value = countItems[Object.keys(countItems)[0]];
+  let arrOfModes = [];
+  for (i = 1; i < Object.keys(countItems).length; i++) {
+    if (countItems[Object.keys(countItems)[i]] > value) {
+      value = countItems[Object.keys(countItems)[i]];
+    } else if (countItems[Object.keys(countItems)[i]] == value) {
+      arrOfModes.push(Object.keys(countItems)[i]);
+    }
+  }
+
+  if (arrOfModes.length == countItems.length) {
+    return [];
+  }
+  if (arrOfModes.length == 0) {
+    return value;
+  } else {
+    return arrOfModes;
+  }
+}
+
+function mode(arr){
+  var dict = {}
+  for (var i=0; i<arr.length; i++){
+    if (dict.hasOwnProperty(arr[i])){
+      dict[arr[i]]+=1
+    }
+    else {
+      dict[arr[i]] = 1
+    }
+  }
+
+  var max = 0
+  var int = 0
+  var arrVal = []
+  for (key in dict){
+    if (dict[key]>max){
+      max = dict[key]
+      int = parseInt(key)
+      arrVal.push(key)
+    }
+    else if (dict[key]==max){
+      arrVal.push(key)
+    }
+  }
+  if (arrVal.length == Object.keys(dict).length){
+    return []
+  }
+  return int
+}
+// [1,1,2,2,2,3,3,3,3,3]
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+
+/* 
+  Missing Value
+  You are given an array of length N that contains, in no particular order,
+  integers from 0 to N . One integer value is missing.
+  Quickly determine and return the missing value.
+  NO SORT ALLOWED
+*/
+function missingValue(arr){
 
 }
