@@ -1,12 +1,8 @@
 // MON
-/* 
-  Recursively sum an arr of ints
-*/
 
-function sumArr(nums, i = 0) {
-
-}
-
+// 1, BASE CASE
+// 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
+// 3. RECURSIVE CALL
 
 /* 
   Recursive Sigma
@@ -16,6 +12,16 @@ function sumArr(nums, i = 0) {
 function recursiveSigma(n) {
 
 }
+// 5 => 5 + 4 + 3 + 2 + 1 => 15
+
+/* 
+  Recursively sum an arr of ints
+*/
+
+function sumArr(arr, i = 0) {
+
+}
+// [1,2,3] => 6
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
