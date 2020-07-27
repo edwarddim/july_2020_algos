@@ -90,3 +90,62 @@ console.log(binarySearch([1,2,3], 3)); // true
 console.log(binarySearch([1,2,3,5,6], 5)); // true
 console.log(binarySearch([1,2,3,4,5,6], 2)); // true
 console.log(binarySearch([1,2,3,4,5,6], 6)); // true
+
+/* 
+  Array: Remove Duplicates
+  Given a SORTED array of integers, dedupe the array 
+  Because array elements are already in order, all duplicate values will be grouped together.
+  Ok to use a new array
+  Bonus: do it in O(n) time (no nested loops, new array ok)
+*/
+function dedupeArr(arr){
+
+}
+
+/* 
+  Array: Mode
+  
+  Create a function that, given an array of ints,
+  returns the int that occurs most frequently in the array.
+  What if there are multiple items that occur the same number of time?
+    - return all of them (in an array)
+    - what if all items occur the same number of times?
+      - return empty array
+*/
+function mode(arr){
+
+}
+
+// THUR
+/* 
+  Missing Value
+  You are given an array of length N that contains, in no particular order,
+  integers from 0 to N . One integer value is missing.
+  Quickly determine and return the missing value.
+  NO SORT ALLOWED
+*/
+function missingValue(arr) {
+  let maxNumber = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > maxNumber) {
+      maxNumber = arr[i];
+    }
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!arr.includes(maxNumber - i)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+// THIS DOESN'T WORK FOR THIS CASE: [3,0,2,2] => True
+// [3,0,1,2] => False
+// [4,0,2,1] => True
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+
