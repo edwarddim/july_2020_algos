@@ -12,3 +12,19 @@ function sumArr(nums, i = 0) {
     }
     return nums[i] + sumArr(nums, i + 1);
 }
+
+function binarySearch(arr, target){
+    if(arr.length == 1){
+        return (arr[0] == target) ? true : false;
+    }
+    var mid = Math.floor((arr.length) / 2)
+    if(target == arr[mid]){
+        return true
+    }
+    if(target < arr[mid]){
+        return binarySearch(arr.slice(0, mid), target)
+    }
+    else{
+        return binarySearch(arr.slice(mid, arr.length), target)
+    }
+}
