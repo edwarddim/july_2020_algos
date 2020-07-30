@@ -107,3 +107,106 @@ function recursiveBinary(arr, target){
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
+
+// THUR
+
+/*
+    Rising Square
+    Given a number return an array filled with the
+    squares of integers up to given number
+
+*/
+function risingSqaures(num, arr){
+
+}
+// EX. 3 => [1,4,9]
+// EX. 5 => [1,4,9,16,25]
+
+
+
+/*
+    Rising Square
+    Given a number return an array filled with the
+    squares of integers up to given number
+*/
+function risingSqaures(num, arr=[]){
+  if (num < 1) {
+    return arr;
+  }
+  arr.unshift(num*num);
+  return risingSqaures(num-1, arr);
+}
+// EX. 3 => [1,4,9]
+// EX. 5 => [1,4,9,16,25]
+console.log(risingSqaures(0)); // []
+console.log(risingSqaures(3)); // [1,4,9]
+console.log(risingSqaures(5)); // [1,4,9,16,25]
+
+function risingSqaures(num, arr=[]){
+
+  if (num < 1){
+      return arr.reverse(arr)
+  }
+  else {
+      arr.push(num*num)
+      return risingSqaures(num-1, arr)
+  }
+}
+
+//unshift is cool
+
+//unshift is cool, learned so
+// yeah javascript arrays have some really nice methods
+// Why does liveshare always seem to copy paste stuff?
+
+
+//unshift is cool, learned so
+// yeah javascript arrays have some really nice methods
+// Why does liveshare always seem to copy paste stuff?
+
+
+
+/*
+  recursively find the lowest common multiple between two numbers
+  "A common multiple is a number that is a multiple of two or more integers.
+  The common multiples of 3 and 4 are 0, 12, 24, ....
+  The least common multiple (LCM) of two numbers is the smallest number (not zero)
+  that is a multiple of both."
+
+  Try writing two columns of multiples as a starting point:
+  starting with 15 and 25 and keep writing their multiples until you find the lowest common one
+  then turn this in to a step by step instruction
+  15 25
+  30 50
+  45 75
+  60
+  75
+  75 is the first common
+*/
+function lcm(a, b, aMult=a, bMult=b) {
+  if (aMult === a*b && bMult === a*b) {
+    return a*b;
+  } else if (aMult === bMult) {
+    return aMult;
+  }
+  if (bMult === a*b) {
+    bMult = b;
+    aMult += a;
+  } else {
+    bMult += b;
+  }
+  return lcm(a, b, aMult, bMult)
+}
+
+// LCM tests
+console.log(lcm(1,5)); // 5
+console.log(lcm(2,7)); // 14
+console.log(lcm(5,10)); // 10
+console.log(lcm(15, 25)); // 75
+console.log(lcm(34, 2)); // 34
+console.log(lcm(6,4)); // 12
+console.log(risingSqaures(3));
+console.log(risingSqaures(5));
+
+
+

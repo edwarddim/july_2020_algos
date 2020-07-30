@@ -28,3 +28,18 @@ function binarySearch(arr, target){
         return binarySearch(arr.slice(mid, arr.length), target)
     }
 }
+
+
+function rLCM(a, b, am = a, bm = b) {
+    if (am === bm) {
+      return am;
+    }
+  
+    if (am < bm) {
+      return rLCM(a, b, am + a, bm);
+    }
+  
+    if (bm < am) {
+      return rLCM(a, b, am, bm + b);
+    }
+  }

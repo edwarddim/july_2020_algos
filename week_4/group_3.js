@@ -146,7 +146,6 @@ recursiveBinary([1,2,5,6,7,8,9], 3)
 recursiveBinary([1,2,5,6,7,8,9], 1 + 1)
 recursiveBinary([1,2,5,6,7,8,9], -1)
 
-recursiveBinary(arr, target, left=0, right=(arr.length - 1))
 
 function binarySearch(arr, target, start=0, stop=(arr.length-1)) {
 
@@ -163,4 +162,121 @@ function binarySearch(arr, target, start=0, stop=(arr.length-1)) {
       return binarySearch(arr, target, start, midPoint)
   }
 }
-The speed of a switch statement vs. an if-else chain depends on several factors, most notably the programming language and the amount of conditionals in each. A switch statement was used here primarily for readability. It is a control flow that matches what we are concerned with handling in this recursive function: 4 discrete cases, each requiring different action. Additionally, a few individuals have a rare allergy to if-else statements that exceed 3 logical tests. For more information on JavaScript's switch statement and its performance vs. if-else, please take a look at this post: Javascript switch vs. if...else if...else, which links to this more informative page http://archive.oreilly.com/pub/a/server-administration/excerpts/even-faster-websites/writing-efficient-javascript.html
+
+
+
+
+/* 
+    Rising Square
+    Given a number return an array filled with the
+    squares of integers up to given number
+
+*/
+// EX. 3 => [1,4,9]
+// EX. 5 => [1,4,9,16,25]
+
+
+
+function risingSquares(num, arr){
+  if (num == 0){
+    return arr
+  } else {
+    arr.unshift(num * num)
+    return risingSquares(num -1, arr)
+  }
+}
+console.log(risingSquares(3, []))
+
+
+/* 
+  recursively find the lowest common multiple between two numbers
+  "A common multiple is a number that is a multiple of two or more integers. 
+  The common multiples of 3 and 4 are 0, 12, 24, .... 
+  The least common multiple (LCM) of two numbers is the smallest number (not zero) 
+  that is a multiple of both."
+  
+  Try writing two columns of multiples as a starting point:
+  starting with 15 and 25 and keep writing their multiples until you find the lowest common one
+  then turn this in to a step by step instruction
+  15 25 
+  30 50
+  45 75
+  60
+  75
+  75 is the first common
+
+  3 4
+  6 8
+  9 12
+  12
+
+  6 9
+  12 18
+  18
+*/
+
+function LCM(a,b, aMult, bMult){
+  if(a*aMult > b*bMult){
+    return LCM(a,b,aMult,bMult+1)
+  }
+  if(a*aMult < b*bMult){
+    return LCM(a,b,aMult+1,bMult)
+  }
+  if(a*aMult == b*bMult){
+    return a*aMult
+  }
+}
+LCM(7, 17, 1, 1)
+
+
+
+// beverly
+function LCM(a,b, aMult=a, bMult=b){
+  if(a + aMult > b + bMult){
+    return LCM(a, b, aMult, bMult+=b)
+  }
+  if(a + aMult < b+bMult){
+    return LCM(a, b, aMult+=a, bMult)
+  }
+  if(a + aMult == b + bMult){
+    return aMult
+  }
+}
+console.log(LCM(6, 10, aMult=6, bMult=10))
+console.log(LCM(6, 100, aMult=6, bMult=100))
+console.log(LCM(6, 12, aMult=6, bMult=12)) == 24 //this one
+
+
+function LCM(a,b, aMult=a, bMult=b){
+  if(aMult > bMult){
+    return LCM(a, b, aMult, bMult+=b)
+  }
+  if(aMult < bMult){
+    return LCM(a, b, aMult+=a, bMult)
+  }
+  if(aMult == bMult){
+    return aMult;
+  }
+}
+
+console.log(LCM(6, 12, aMult=6, bMult=12))
+
+// okay working
+// good!
+// why cant it just be a < b, why amult < bmult?
+// oh because that is what we are incrementing. yeah
+
+function LCM(a,b, aMult=a, bMult=b){
+  if(a * aMult > b*bMult){
+    bMult++
+    return LCM(a,b,aMult,bMult)
+  }
+  if(a * aMult < b*bMult){
+    aMult++
+    return LCM(a,b,aMult,bMult)
+  }
+  if(a * aMult == b*bMult){
+    return a*aMult
+  }
+}
+console.log(LCM(3, 4, aMult=2, bMult=2))

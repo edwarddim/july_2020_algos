@@ -105,7 +105,10 @@ arr[1][2] == [4]
 
 function recursiveBinary(arr, target) {
   if (arr.length == 2 && arr[arr.length - 1] > target) {
-    
+    return false
+  }
+  if (arr.length == 2) {
+    return arr[0] == target
   }
   let midIndex;
   let numToremove;
@@ -129,6 +132,9 @@ function recursiveBinary(arr, target) {
     arr.splice(0, numToremove)
     return recursiveBinary(arr,target)
   }
+  if (arr[midIndex] == target) {
+    return true;
+  }
 
 
 }
@@ -149,3 +155,60 @@ function recursiveBinary(arr, target){
   return false
 }
 
+// THUR
+
+/* 
+    Rising Square
+    Given a number return an array filled with the
+    squares of integers up to given number
+
+*/
+function risingSquares(num, arr){
+  if (num < 0){
+    return "Number is less that 0"
+  }
+  if(num === 0){
+    return arr
+  }
+  arr.unshift(num*num)
+  return risingSquares(num - 1, arr)
+}
+// EX. 3 => [1,4,9]
+// EX. 5 => [1,4,9,16,25]
+
+/* 
+  recursively find the lowest common multiple between two numbers
+  "A common multiple is a number that is a multiple of two or more integers. 
+  The common multiples of 3 and 4 are 0, 12, 24, .... 
+  The least common multiple (LCM) of two numbers is the smallest number (not zero) 
+  that is a multiple of both."
+  
+  Try writing two columns of multiples as a starting point:
+  starting with 15 and 25 and keep writing their multiples until you find the lowest common one
+  then turn this in to a step by step instruction
+  15 25
+  30 50
+  45 75
+  60
+  75
+  75 is the first common
+*/
+// let the two numbers be x,y
+//  c/y = y * I1
+// c/x = x * I2
+// y * I1 = x * I2
+//  (y * I1) / x = I2
+
+//  (y * I) % x == 0
+
+function LCM(a,b, aMult=a, bMult=b){
+  if (aMult == bMult){
+    return aMult
+  }
+  if (aMult < bMult){
+    return LCM(a, b, aMult + a, bMult)
+  } 
+  else if (aMult > bMult){
+    return LCM(a, b, aMult, bMult + b)
+  }
+}

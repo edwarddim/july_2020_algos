@@ -73,11 +73,33 @@ function recursiveBinary(arr, target){
     squares of integers up to given number
 
 */
-function risingSqaures(num){
+function risingSqaures(num, arr){
 
 }
 // EX. 3 => [1,4,9]
 // EX. 5 => [1,4,9,16,25]
+
+/* 
+  recursively find the lowest common multiple between two numbers
+  "A common multiple is a number that is a multiple of two or more integers. 
+  The common multiples of 3 and 4 are 0, 12, 24, .... 
+  The least common multiple (LCM) of two numbers is the smallest number (not zero) 
+  that is a multiple of both."
+  
+  Try writing two columns of multiples as a starting point:
+  starting with 15 and 25 and keep writing their multiples until you find the lowest common one
+  then turn this in to a step by step instruction
+  15 25
+  30 50
+  45 75
+  60
+  75
+  75 is the first common
+*/
+
+function LCM(a,b, aMult=a, bMult=b){
+
+}
 
 
 // -----------------------------------------------------------------------------------------------//
