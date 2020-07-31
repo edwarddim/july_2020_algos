@@ -210,3 +210,27 @@ console.log(risingSqaures(5));
 
 
 
+
+/*
+    String Subset
+    Given a string, return an array filled
+    with IN-ORDER substrings
+*/
+
+
+function stringSubset(string, arr=[]) {
+  if (string === '') {
+    arr.push('');
+    return arr;
+  }
+  for (var i = string.length; i > 0; i--) {
+    arr.push(string.slice(0, i));
+  }
+  return stringSubset(string.slice(1), arr);
+}
+
+// EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
+// Tests
+console.log(stringSubset("")); // [""]
+console.log(stringSubset("ABC")); // ["ABC", "AB", "A", "BC", "B", "C", ""]
+console.log(stringSubset('cbda')) // ['cbda', 'cbd', 'cb', 'c', 'bda', 'bd', 'b', 'da', 'd', 'a', '']

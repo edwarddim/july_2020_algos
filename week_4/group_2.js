@@ -212,3 +212,27 @@ function LCM(a,b, aMult=a, bMult=b){
     return LCM(a, b, aMult, bMult + b)
   }
 }
+
+// FRI
+
+/*
+    String Subset
+    Given a string, return an array filled
+    with IN-ORDER substrings
+*/
+
+
+function stringSubset(string, arr){
+  var newArr = []
+  if(string.length === 0){
+    newArr.push("")
+    return newArr
+  }
+  for(var i=0; i<string.length; i++){
+    newArr.push(string.slice(0, string.length - i))
+  }
+  return newArr.concat(stringSubset(string.slice(1, string.length), []))
+}
+
+// EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
+// string.slice(0, string.length)

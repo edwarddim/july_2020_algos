@@ -119,4 +119,4 @@ function stringSubset(string, arr){
 
 }
 
-// EX. "ABC" => ["", "C", "B", "BC", "A", "AC", "AB", "ABC"]
+// EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]

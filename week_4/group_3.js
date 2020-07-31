@@ -247,6 +247,9 @@ console.log(LCM(6, 100, aMult=6, bMult=100))
 console.log(LCM(6, 12, aMult=6, bMult=12)) == 24 //this one
 
 
+
+// Working!
+
 function LCM(a,b, aMult=a, bMult=b){
   if(aMult > bMult){
     return LCM(a, b, aMult, bMult+=b)
@@ -280,3 +283,94 @@ function LCM(a,b, aMult=a, bMult=b){
   }
 }
 console.log(LCM(3, 4, aMult=2, bMult=2))
+
+
+/*
+    String Subset
+    Given a string, return an array filled
+    with IN-ORDER substrings
+*/
+
+
+function stringSubset(string, arr){
+
+}
+
+
+if (str.length < 0)
+  stringSubset(str.shift())
+  if (str.length > 0)
+  stringSubset(str.length -1)
+  
+  
+  
+  if (str == 0)
+  str.substring(1) =>  BC
+  stringSubset("ABC", [])
+// EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
+// EX. "ABCD" => ["ABCD", "ABC", "AB","A",??? "BCD", "BC", "B", "CD", "C", "D", ""]
+
+
+
+function stringSubset(string, arr){
+  if (arr == []) {
+    return 0
+  } 
+}
+stringSubset("ABC", [])
+
+
+fu
+// EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
+
+
+
+
+function stringSubset(str, arr){
+  if(str.length == 0){
+    return arr
+  }
+  arr.push(str)
+  console.log(str)
+  stringSubset(str.slice(0, str.length-1), arr)
+}
+
+
+
+
+function stringSubset(str, arr){
+  if(str.length == 0){
+    stringSubset(str.substring(1))
+  }
+  arr.push(str)
+  console.log(str)
+  stringSubset(str.substring(0, str.length-1), arr)
+}
+
+
+console.log(stringSubset('ABC', []))
+
+
+//'ABC' ==> 'abc', 'ab', 'a'
+
+
+
+
+
+function stringSubset(str, arr){
+  if(str.length == 0){
+    return arr
+  }
+  if(str.length == 1){
+    console.log(str, 'just str', arr[0])
+    arr.push(str)
+    stringSubset(arr[0].substring(1), arr)
+    console.log(str, arr, 'str.length ==1')
+  }
+  arr.push(str)
+  console.log(str, arr, 'first')
+  stringSubset(str.substring(0,str.length-1), arr)
+}
+
+
+console.log(stringSubset('ABC', []))
